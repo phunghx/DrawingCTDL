@@ -43,6 +43,33 @@ void changex(int value) { if (value>-1000 & value <1000) movx = (short)value; }
 int getmaxx(void) { return 640; }
 int getmaxy(void) { return 300; }
 
+wchar_t* convertCharArrayToLPCWSTR(const char* charArray)
+{
+	wchar_t* wString = new wchar_t[4096];
+	MultiByteToWideChar(CP_ACP, 0, charArray, -1, wString, 4096);
+	return wString;
+}
+void drawText(int x, int y, const char*mess) {
+	RECT rect;
+	LPCWSTR message = convertCharArrayToLPCWSTR(mess);
+	HWND console_handle = GetConsoleWindow();
+	HDC device_context = GetDC(console_handle);
+	GetWindowRect(console_handle, &rect);
+
+	//Here's a 5 pixels wide RED line [from initial 0,0] to 300,300
+	HPEN pen = CreatePen(PS_SOLID, 5, RGB(255, 0, 0));
+	SelectObject(device_context, pen);
+	SetTextColor(device_context, RGB(255, 0, 0));
+	SetBkMode(device_context, TRANSPARENT);
+	rect.left = x;
+	rect.top = y;
+	DrawText(device_context, message, -1, &rect, DT_SINGLELINE | DT_NOCLIP);
+
+	ReleaseDC(console_handle, device_context);
+
+}
+
+
 void setcolorRGB(int r, int g, int b)
 {
 	PEN = getPen(PS_SOLID, 2, RGB(r,g,b));
