@@ -32,23 +32,37 @@ app = Flask(__name__)
 # import the necessary packages
 from threading import Thread
 import cv2
-
+video_path="rtsp://183.80.133.98:1554/user=admin&password=&channel=1&steam=0.sdp"
+width=1920
+height=1080
+import numpy as np
+import cv2
+import subprocess as sp
+import shlex
 
 class WebcamVideoStream:
     def __init__(self, src=0, name="WebcamVideoStream"):
         # initialize the video camera stream and read the first frame
         # from the stream
         # self.stream = cv2.VideoCapture(src, cv2.CAP_FFMPEG)
-        self.stream = cv2.VideoCapture(src)
+        #self.stream = cv2.VideoCapture(src)
         # self.stream.set(cv2.CAP_PROP_FPS, 13.0)
-        (self.grabbed, self.frame) = self.stream.read()
+        #(self.grabbed, self.frame) = self.stream.read()
 
         # initialize the thread name
-        self.name = name
-
+        #self.name = name
+        command = [ 'ffmpeg',
+            '-rtsp_transport', 'tcp',
+            '-i', video_path,
+            '-pix_fmt', 'rgb24',  # brg24 for matching OpenCV
+            '-f', 'rawvideo',
+            'pipe:' ]
+        self.process = sp.Popen(command, stdout=sp.PIPE, bufsize=10**8) 
         # initialize the variable used to indicate if the thread should
         # be stopped
         self.stopped = False
+        self.W = 1920
+        self.H = 1080
 
     def start(self):
         # start the thread to read frames from the video stream
@@ -63,10 +77,18 @@ class WebcamVideoStream:
             # if the thread indicator variable is set, stop the thread
             if self.stopped:
                 return
+            buffer = self.process.stdout.read(self.W*self.H*3)
 
+    
+            if len(buffer) != W*H*3:
+                break
+
+            img = np.frombuffer(buffer, np.uint8).reshape(self.H, self.W, 3)
+            self.grabbed, self.frame = true, img
             # otherwise, read the next frame from the stream
-            self.stream.grab()
-            (self.grabbed, self.frame) = self.stream.read()
+            #self.stream.grab()
+            #(self.grabbed, self.frame) = self.stream.read()
+            
 
     def read(self):
         # return the frame most recently read
