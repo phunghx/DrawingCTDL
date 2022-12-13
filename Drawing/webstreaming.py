@@ -33,6 +33,8 @@ app = Flask(__name__)
 from threading import Thread
 import cv2
 video_path="rtsp://183.80.133.98:1554/user=admin&password=&channel=1&steam=0.sdp"
+video_path="rtmp://live-10-hcm.fcam.vn:1956/63eef9bd282e0ab5mye8?t=1670316702&tk=a7386178df986c5f82d6b0164109ec196fc92023f525f1f98cb85295d3b5984f/KeYm2RCH-AhrStRPD-9g5Kioe1-PbAvhlmw-v2"
+
 width=1920
 height=1080
 import numpy as np
@@ -51,12 +53,13 @@ class WebcamVideoStream:
 
         # initialize the thread name
         #self.name = name
-        command = [ 'ffmpeg',
-            '-rtsp_transport', 'tcp',
-            '-i', video_path,
-            '-pix_fmt', 'rgb24',  # brg24 for matching OpenCV
-            '-f', 'rawvideo',
-            'pipe:' ]
+        command = [ 'ffmpeg',                                                                                                                                                                                                                                                 
+            #'-rtsp_transport', 'tcp',                                                                                                                                                                                                                                        
+            '-i', video_path,                                                                                                                                                                                                                                                 
+            '-pix_fmt', 'rgb24',  # brg24 for matching OpenCV                                                                                                                                                                                                                 
+            '-f', 'rawvideo',                                                                                                                                                                                                                                                 
+            '-loglevel', 'error',                                                                                                                                                                                                                                             
+            'pipe:' ]          
         self.process = sp.Popen(command, stdout=sp.PIPE, bufsize=10**8) 
         # initialize the variable used to indicate if the thread should
         # be stopped
@@ -121,7 +124,14 @@ def detect_motion(frameCount):
     # read thus far
     # md = SingleMotionDetector(accumWeight=0.1)
     total = 0
-
+    command = [ 'ffmpeg',
+            '-i', 'pipe:',
+            '-pix_fmt', 'rgb24',  # brg24 for matching OpenCV
+            '-f', 'rawvideo',
+            '-vcodec', 'h264',
+            '-loglevel', 'error', 
+            'rtsp://localhost:8554/mystream' ]
+    process = sp.Popen(command, stdin=sp.PIPE, bufsize=10**8)
     # loop over frames from the video stream
     while True:
         # read the next frame from the video stream, resize it,
@@ -136,6 +146,13 @@ def detect_motion(frameCount):
         cv2.putText(frame, timestamp.strftime(
             "%A %d %B %Y %I:%M:%S%p"), (frame.shape[1] - 400, 100),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
+        
+        process.stdin.write(
+            frame
+            .astype(np.uint8)
+            .tobytes()
+        )        
+        
 
         # if the total number of frames has reached a sufficient
         # number to construct a reasonable background model, then
