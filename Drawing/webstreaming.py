@@ -52,7 +52,7 @@ class WebcamVideoStream:
         #(self.grabbed, self.frame) = self.stream.read()
 
         # initialize the thread name
-        #self.name = name
+        self.name = name
         command = [ 'ffmpeg',                                                                                                                                                                                                                                                 
             #'-rtsp_transport', 'tcp',                                                                                                                                                                                                                                        
             '-i', video_path,                                                                                                                                                                                                                                                 
