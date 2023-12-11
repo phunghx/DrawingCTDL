@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-12-01T08:35:13.758Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="d4KC1yJd640gkyhVxo8n" version="22.1.5" type="gitlab" pages="4">
+<mxfile host="app.diagrams.net" modified="2023-12-11T08:41:34.460Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0" etag="zZj1D01UDYrAaW7P34Nw" version="22.1.7" type="github" pages="4">
   <diagram name="Main Flow" id="5hEIb1a4UCWueppqQS7Q">
-    <mxGraphModel dx="1362" dy="1871" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1364" dy="1895" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -72,7 +72,7 @@
         <mxCell id="ojccp1RaXKusOlA6AM0y-6" value="Start Kafka Client" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="385" y="-790" width="150" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="YEOD-zTDMhKhUNk2YeDw-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="ojccp1RaXKusOlA6AM0y-13">
+        <mxCell id="YEOD-zTDMhKhUNk2YeDw-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="ojccp1RaXKusOlA6AM0y-13" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="40" y="-610" as="targetPoint" />
             <Array as="points">
@@ -194,26 +194,26 @@
         <mxCell id="RNmh61nQ9ovzE0x0kWN5-1" value="Message Input" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="200" y="-620" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="RNmh61nQ9ovzE0x0kWN5-3" value="Redis" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="RNmh61nQ9ovzE0x0kWN5-3" value="Kafka" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="410" y="-540" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="UFaaTKaplKjj85b-ZlUV-2" value="&lt;b&gt;Consumer Kafka Video&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="320" y="-820" width="300" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="YEOD-zTDMhKhUNk2YeDw-1" value="&lt;i style=&quot;font-size: 13px; font-weight: bold;&quot;&gt;CONFIG&lt;br&gt;&lt;/i&gt;- Kafka:&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ broker (ip)&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ port&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ group_id&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ message_topic&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ result_topic&lt;br&gt;- Redis:&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ broker (ip)&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ port&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ message_topic&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ result_topic&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ &lt;strike&gt;error_topic&lt;/strike&gt;&lt;br&gt;- YOLOv8 Detection&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ model_path&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ batch_size&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ devices&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ save video&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ zone&lt;br&gt;- Database&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ DB names&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ DB url&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.document2;whiteSpace=wrap;size=0.25;align=left;horizontal=1;verticalAlign=top;fontSize=13;" vertex="1" parent="1">
+        <mxCell id="YEOD-zTDMhKhUNk2YeDw-1" value="&lt;i style=&quot;font-size: 13px; font-weight: bold;&quot;&gt;CONFIG&lt;br&gt;&lt;/i&gt;- Kafka:&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ broker (ip)&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ port&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ group_id&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ message_topic&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ result_topic&lt;br&gt;- Redis:&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ broker (ip)&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ port&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ message_topic&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ result_topic&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ &lt;strike&gt;error_topic&lt;/strike&gt;&lt;br&gt;- YOLOv8 Detection&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ model_path&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ batch_size&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ devices&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ save video&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ zone&lt;br&gt;- Database&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ DB names&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;+ DB url&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.document2;whiteSpace=wrap;size=0.25;align=left;horizontal=1;verticalAlign=top;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="10" y="-1090" width="220" height="380" as="geometry" />
         </mxCell>
-        <mxCell id="YEOD-zTDMhKhUNk2YeDw-2" value="&lt;b&gt;API&lt;/b&gt;:&amp;nbsp;&lt;br&gt;- update cam: add update consume&lt;br&gt;&lt;b&gt;Program&lt;/b&gt;:&lt;br&gt;- keep message in processing in redis&lt;br&gt;- test create cuda stream and opencv stream&amp;nbsp;&lt;br&gt;- add config and log in cpp code&lt;br&gt;- Spit code function for controller in data class into CamDao, CounterDao and Person Dao&lt;br&gt;- Code database name and database url into parrams in DataClass and DataMongoClass&lt;br&gt;- Code change attribute line_config in CamClass -&amp;gt; config and add duration duration into dictionary config.&lt;br&gt;- Save detection results with bin file" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;verticalAlign=top;align=left;" vertex="1" parent="1">
+        <mxCell id="YEOD-zTDMhKhUNk2YeDw-2" value="&lt;b&gt;API&lt;/b&gt;:&amp;nbsp;&lt;br&gt;- update cam: add update consume&lt;br&gt;&lt;b&gt;Program&lt;/b&gt;:&lt;br&gt;- keep message in processing in redis&lt;br&gt;- test create cuda stream and opencv stream&amp;nbsp;&lt;br&gt;- add config and log in cpp code&lt;br&gt;- Spit code function for controller in data class into CamDao, CounterDao and Person Dao&lt;br&gt;- Code database name and database url into parrams in DataClass and DataMongoClass&lt;br&gt;- Code change attribute line_config in CamClass -&amp;gt; config and add duration duration into dictionary config.&lt;br&gt;- Save detection results with bin file" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;verticalAlign=top;align=left;" parent="1" vertex="1">
           <mxGeometry x="240" y="-1090" width="610" height="250" as="geometry" />
         </mxCell>
-        <mxCell id="YEOD-zTDMhKhUNk2YeDw-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ojccp1RaXKusOlA6AM0y-13" target="ojccp1RaXKusOlA6AM0y-13">
+        <mxCell id="YEOD-zTDMhKhUNk2YeDw-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="ojccp1RaXKusOlA6AM0y-13" target="ojccp1RaXKusOlA6AM0y-13" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="aT3iJVQdpg2UHgiwBWrG" name="Consumer Kafka Video">
-    <mxGraphModel dx="1362" dy="1871" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1364" dy="1895" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -494,7 +494,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="Fa9qEKNsyprh8V_eVMWT" name="People Counting Process">
-    <mxGraphModel dx="1362" dy="771" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1364" dy="795" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -637,24 +637,24 @@
         <mxCell id="AyU8M4hoDukCYJioR-Rg-54" value="in_count&lt;br&gt;out_count" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="280" y="1750" width="240" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="7YYB59KYBVQRV5arXoAF-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7YYB59KYBVQRV5arXoAF-1" target="7YYB59KYBVQRV5arXoAF-6">
+        <mxCell id="7YYB59KYBVQRV5arXoAF-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="7YYB59KYBVQRV5arXoAF-1" target="7YYB59KYBVQRV5arXoAF-6" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="400" y="1440" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="7YYB59KYBVQRV5arXoAF-1" value="Ouput bin file" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.direct_data;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="7YYB59KYBVQRV5arXoAF-1" value="Ouput bin file" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.direct_data;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="280" y="1230" width="240" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="7YYB59KYBVQRV5arXoAF-2" value="save detection result into file" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="7YYB59KYBVQRV5arXoAF-2" value="save detection result into file" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="400" y="1170" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="7YYB59KYBVQRV5arXoAF-4" value="load detection result form file" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="7YYB59KYBVQRV5arXoAF-4" value="load detection result form file" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="400" y="1380" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="7YYB59KYBVQRV5arXoAF-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7YYB59KYBVQRV5arXoAF-6" target="AyU8M4hoDukCYJioR-Rg-37">
+        <mxCell id="7YYB59KYBVQRV5arXoAF-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="7YYB59KYBVQRV5arXoAF-6" target="AyU8M4hoDukCYJioR-Rg-37" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="7YYB59KYBVQRV5arXoAF-6" value="bboxes, scores, labels, meta[i]" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+        <mxCell id="7YYB59KYBVQRV5arXoAF-6" value="bboxes, scores, labels, meta[i]" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" parent="1" vertex="1">
           <mxGeometry x="280" y="1440" width="240" height="60" as="geometry" />
         </mxCell>
       </root>
