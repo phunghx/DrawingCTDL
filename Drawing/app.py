@@ -152,7 +152,7 @@ def generate_app(get_processed_inputs, inpaint):
 
             sam_mask = gr.AnnotatedImage(
                 label="SAM result",
-                interactive=False,
+                
                 height=IMG_SIZE,
                 width=IMG_SIZE,
                 color_map={"background": "#a89a00"}
